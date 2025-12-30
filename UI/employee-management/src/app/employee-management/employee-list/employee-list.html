@@ -1,0 +1,70 @@
+<mat-card>
+  <h2>Employee List</h2>
+
+  <mat-form-field appearance="outline" class="full-width">
+    <mat-label>Search Employee (fullname, email, phoneNo, department, designation)</mat-label>
+    <input matInput [(ngModel)]="searchTerm" (input)="searchEmployees()">
+  </mat-form-field>
+
+  <div style="margin-bottom:12px;">
+      @if(isAdmin()){
+    <button mat-raised-button color="primary" routerLink="/addemployee">
+      <mat-icon>person_add</mat-icon>&nbsp; Add Employee
+    </button>
+  }
+  </div>
+  <!-- @else {
+    <div></div>
+  } -->
+  
+  
+
+  <div *ngIf="loading">Loading employees...</div>
+  <div *ngIf="message">{{ message }}</div>
+
+  <mat-card *ngFor="let emp of filteredEmployees" class="employee-card" style="margin-bottom:12px;">
+    <div style="display:flex; justify-content:space-between; align-items:center;">
+      <div>
+        <h3 style="margin:0;">Name:{{ emp.fullname }}</h3>
+        <p><strong>Email:</strong> {{ emp.email }}</p>
+        <p><strong>Phone:</strong> {{ emp.phoneNo }}</p>
+        <p><strong>Department:</strong> {{ emp.department }}</p>
+        <p><strong>Designation:</strong> {{ emp.designation }}</p>
+        <p><strong>DOJ:</strong> {{ emp.dateOfJoining | date }}</p>
+        <p><strong>Salary:</strong> {{ emp.salary | currency }}</p>
+      </div>
+
+      <div class="actions" style="display:flex; flex-direction:column; gap:8px;">
+        <!-- ✅ Correct Angular event binding -->
+        <button
+          mat-stroked-button
+          color="accent"
+          (click)="viewEmployee(emp.id)"
+        >
+          <mat-icon>visibility</mat-icon>
+        </button>
+
+        <button
+          mat-stroked-button
+          color="primary"
+          *ngIf="role === 'Admin'"
+          [routerLink]="['/editemployee', emp.id]"
+        >
+          <mat-icon>edit</mat-icon>
+        </button>
+
+        <button
+          mat-stroked-button
+          color="warn"
+          *ngIf="role === 'Admin'"
+          (click)="deleteEmployee(emp.id)"
+        >
+          <mat-icon>delete</mat-icon>
+        </button>
+      </div>
+    </div>
+  </mat-card>
+</mat-card>
+
+
+<!-- [routerLink]="['/editemployee', emp.id]" -->

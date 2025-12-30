@@ -1,0 +1,32 @@
+.signup-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #e3f2fd, #f8f9fa);
+}
+
+mat-card {
+  width: 480px;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+mat-card-title {
+  text-align: center;
+  font-size: 1.5rem;
+  color: #1976d2;
+  margin-bottom: 15px;
+}
+
+mat-form-field {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+button {
+  width: 100%;
+  margin-top: 10px;
+  font-weight: 500;
+}

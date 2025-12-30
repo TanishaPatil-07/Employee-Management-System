@@ -1,0 +1,60 @@
+<div class="signup-container">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Employee Registration</mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content>
+      <form (ngSubmit)="onSubmit()">
+        <!-- <mat-form-field appearance="outline">
+          <mat-label>Full Name</mat-label>
+          <input matInput [(ngModel)]="fullname" name="fullname" required />
+        </mat-form-field> -->
+
+        <mat-form-field appearance="outline">
+          <mat-label>Role</mat-label>
+          <input matInput type="email" [(ngModel)]="Role" name="Role" required />
+        </mat-form-field>
+
+
+        <mat-form-field appearance="outline">
+          <mat-label>Email</mat-label>
+          <input matInput type="email" [(ngModel)]="Email" name="Email" required />
+        </mat-form-field>
+<!-- 
+        <mat-form-field appearance="outline">
+          <mat-label>Phone Number</mat-label>
+          <input matInput [(ngModel)]="phoneno" name="phoneno" required />
+        </mat-form-field> -->
+
+        <!-- <mat-form-field appearance="outline">
+          <mat-label>Department</mat-label>
+          <input matInput [(ngModel)]="department" name="department" required />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Designation</mat-label>
+          <input matInput [(ngModel)]="designation" name="designation" required />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Salary</mat-label>
+          <input matInput type="number" [(ngModel)]="salary" name="salary" required />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Date of Joining</mat-label>
+          <input matInput type="date" [(ngModel)]="dateofjoining" name="dateofjoining" required />
+        </mat-form-field> -->
+
+        <mat-form-field appearance="outline">
+          <mat-label>Password</mat-label>
+          <input matInput type="password" [(ngModel)]="Password" name="Password" required />
+        </mat-form-field>
+
+        <button mat-raised-button color="primary" type="submit">Register</button>
+        <button mat-button color="accent" type="button" (click)="onClick()">Go to Login</button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

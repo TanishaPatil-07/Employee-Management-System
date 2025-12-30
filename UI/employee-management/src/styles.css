@@ -1,0 +1,34 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; } */
+
+
+/* Global theme-like styles */
+body {
+  font-family: "Inter", "Roboto", sans-serif;
+  background: linear-gradient(180deg, #f3f7ff 0%, #ffffff 100%);
+  margin: 0;
+  color: #1b1f23;
+}
+
+mat-card {
+  padding: 16px;
+  border-radius: 12px;
+}
+
+mat-toolbar {
+  background: linear-gradient(90deg, #2b6cb0 0%, #4c51bf 100%);
+  color: white;
+}
+
+button[mat-raised-button] {
+  border-radius: 8px;
+  text-transform:none;
+}
+
+/* small responsive tweak */
+@media (max-width: 600px) {
+  .login-card { width: 100% !important; margin: 8px; }
+  mat-form-field { width: 100% !important; }
+}
